@@ -26,6 +26,7 @@ benchmark "nist_800_53_rev_5_ac_2_1" {
   title       = "AC-2(1) Automated System Account Management"
   description = "Support the management of system accounts using [Assignment: organization-defined automated mechanisms]."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -52,6 +53,7 @@ benchmark "nist_800_53_rev_5_ac_3_2" {
   title       = "AC-3(2) Dual Authorization"
   description = "Enforce dual authorization for [Assignment: organization-defined privileged commands and/or other organization-defined actions]."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -71,6 +73,7 @@ benchmark "nist_800_53_rev_5_ac_3_3" {
     benchmark.nist_800_53_rev_5_ac_3_3_b_4,
     benchmark.nist_800_53_rev_5_ac_3_3_b_5,
     benchmark.nist_800_53_rev_5_ac_3_3_c,
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -81,6 +84,7 @@ benchmark "nist_800_53_rev_5_ac_3_3_a" {
   title       = "AC-3(3)(a)"
   description = "Enforce [Assignment: organization-defined mandatory access policy] over the set of covered subjects and objects specified in the policy, and where the policy: (a) Is uniformly enforced across the covered subjects and objects within the system."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -91,6 +95,7 @@ benchmark "nist_800_53_rev_5_ac_3_3_b_1" {
   title       = "AC-3(3)(b)(1)"
   description = "Enforce [Assignment: organization-defined mandatory access policy] over the set of covered subjects and objects specified in the policy, and where the policy: (b) Specifies that a subject that has been granted access to information is constrained from doing any of the following; (1) Passing the information to unauthorized subjects or objects."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -101,6 +106,7 @@ benchmark "nist_800_53_rev_5_ac_3_3_b_2" {
   title       = "AC-3(3)(b)(2)"
   description = "Enforce [Assignment: organization-defined mandatory access policy] over the set of covered subjects and objects specified in the policy, and where the policy: (b) Specifies that a subject that has been granted access to information is constrained from doing any of the following; (2) Granting its privileges to other subjects."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -111,6 +117,7 @@ benchmark "nist_800_53_rev_5_ac_3_3_b_3" {
   title       = "AC-3(3)(b)(3)"
   description = "Enforce [Assignment: organization-defined mandatory access policy] over the set of covered subjects and objects specified in the policy, and where the policy: (b) Specifies that a subject that has been granted access to information is constrained from doing any of the following; (3) Changing one or more security attributes (specified by the policy) on subjects, objects, the system, or system components."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -121,6 +128,7 @@ benchmark "nist_800_53_rev_5_ac_3_3_b_4" {
   title       = "AC-3(3)(b)(4)"
   description = "Enforce [Assignment: organization-defined mandatory access policy] over the set of covered subjects and objects specified in the policy, and where the policy: (b) Specifies that a subject that has been granted access to information is constrained from doing any of the following; (4) Choosing the security attributes and attribute values (specified by the policy) to be associated with newly created or modified objects."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -131,6 +139,7 @@ benchmark "nist_800_53_rev_5_ac_3_3_b_5" {
   title       = "AC-3(3)(b)(5)"
   description = "Enforce [Assignment: organization-defined mandatory access policy] over the set of covered subjects and objects specified in the policy, and where the policy: (b) Specifies that a subject that has been granted access to information is constrained from doing any of the following; (5) Changing the rules governing access."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -141,6 +150,7 @@ benchmark "nist_800_53_rev_5_ac_3_3_c" {
   title       = "AC-3(3)(c)"
   description = "Enforce [Assignment: organization-defined mandatory access policy] over the set of covered subjects and objects specified in the policy, and where the policy: (c) Specifies that [Assignment: organization-defined subjects] may explicitly be granted [Assignment: organization-defined privileges] such that they are not limited by any defined subset (or all) of the above constraints."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -156,6 +166,7 @@ benchmark "nist_800_53_rev_5_ac_3_4" {
     benchmark.nist_800_53_rev_5_ac_3_4_c,
     benchmark.nist_800_53_rev_5_ac_3_4_d,
     benchmark.nist_800_53_rev_5_ac_3_4_e,
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -166,6 +177,7 @@ benchmark "nist_800_53_rev_5_ac_3_4_a" {
   title       = "AC-3(4)(a)"
   description = "Enforce [Assignment: organization-defined discretionary access policy] over the set of covered subjects and objects specified in the policy, and where the policy specifies that a subject that has been granted access to information can do one or more of the following: (a) Pass the information to any other subjects or objects."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -176,6 +188,7 @@ benchmark "nist_800_53_rev_5_ac_3_4_b" {
   title       = "AC-3(4)(b)"
   description = "Enforce [Assignment: organization-defined discretionary access policy] over the set of covered subjects and objects specified in the policy, and where the policy specifies that a subject that has been granted access to information can do one or more of the following: (b) Grant its privileges to other subjects."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -186,6 +199,7 @@ benchmark "nist_800_53_rev_5_ac_3_4_c" {
   title       = "AC-3(4)(c)"
   description = "Enforce [Assignment: organization-defined discretionary access policy] over the set of covered subjects and objects specified in the policy, and where the policy specifies that a subject that has been granted access to information can do one or more of the following: (c) Change security attributes on subjects, objects, the system, or the system’s components."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -196,6 +210,7 @@ benchmark "nist_800_53_rev_5_ac_3_4_d" {
   title       = "AC-3(4)(d)"
   description = "Enforce [Assignment: organization-defined discretionary access policy] over the set of covered subjects and objects specified in the policy, and where the policy specifies that a subject that has been granted access to information can do one or more of the following: (d) Choose the security attributes to be associated with newly created or revised objects."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -206,6 +221,7 @@ benchmark "nist_800_53_rev_5_ac_3_4_e" {
   title       = "AC-3(4)(e)"
   description = "Enforce [Assignment: organization-defined discretionary access policy] over the set of covered subjects and objects specified in the policy, and where the policy specifies that a subject that has been granted access to information can do one or more of the following: (e) Change the rules governing access."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -216,6 +232,7 @@ benchmark "nist_800_53_rev_5_ac_3_8" {
   title       = "AC-3(8) Revocation Of Access Authorizations"
   description = "Enforce the revocation of access authorizations resulting from changes to the security attributes of subjects and objects based on [Assignment: organization-defined rules governing the timing of revocations of access authorizations]."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -236,6 +253,7 @@ benchmark "nist_800_53_rev_5_ac_3_12_a" {
   title       = "AC-3(12)(a)"
   description = "Require applications to assert, as part of the installation process, the access needed to the following system applications and functions: [Assignment: organization-defined system applications and functions]."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -246,6 +264,7 @@ benchmark "nist_800_53_rev_5_ac_3_13" {
   title       = "AC-3(13) Attribute-Based Access Control"
   description = "Enforce attribute-based access control policy over defined subjects and objects and control access based upon [Assignment: organization-defined attributes to assume access permissions]."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -267,6 +286,7 @@ benchmark "nist_800_53_rev_5_ac_3_15_a" {
   title       = "AC-3(15)(a)"
   description = "Enforce [Assignment: organization-defined mandatory access control policy] over the set of covered subjects and objects specified in the policy."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -277,6 +297,7 @@ benchmark "nist_800_53_rev_5_ac_3_15_b" {
   title       = "AC-3(15)(b)"
   description = "Enforce [Assignment: organization-defined discretionary access control policy] over the set of covered subjects and objects specified in the policy."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -297,6 +318,7 @@ benchmark "nist_800_53_rev_5_ac_4_28" {
   title       = "AC-4(28) Linear Filter Pipelines"
   description = "When transferring information between different security domains, implement a linear content filter pipeline that is enforced with discretionary and mandatory access controls."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -320,6 +342,7 @@ benchmark "nist_800_53_rev_5_ac_7_4" {
   description = "a. Allow the use of [Assignment: organization-defined authentication factors] that are different from the primary authentication factors after the number of organization-defined consecutive invalid logon attempts have been exceeded; and b. Enforce a limit of [Assignment: organization-defined number] consecutive invalid logon attempts through use of the alternative factors by a user during a [Assignment: organization-defined time period]."
   children = [
     benchmark.nist_800_53_rev_5_ac_7_4_a,
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -332,6 +355,7 @@ benchmark "nist_800_53_rev_5_ac_7_4_a" {
   title       = "AC-7(4)(a)"
   description = "Allow the use of [Assignment: organization-defined authentication factors] that are different from the primary authentication factors after the number of organization-defined consecutive invalid logon attempts have been exceeded."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -344,6 +368,7 @@ benchmark "nist_800_53_rev_5_ac_24" {
   title       = "Access Control Decisions (AC-24)"
   description = "[Selection: Establish procedures; Implement mechanisms] to ensure [Assignment: organization-defined access control decisions] are applied to each access request prior to access enforcement."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 

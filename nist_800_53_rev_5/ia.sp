@@ -27,6 +27,7 @@ benchmark "nist_800_53_rev_5_ia_2_1" {
   title       = "IA-2(1) Multi-Factor Authentication To Privileged Accounts"
   description = "Implement multi-factor authentication for access to privileged accounts."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -39,6 +40,7 @@ benchmark "nist_800_53_rev_5_ia_2_2" {
   title       = "IA-2(2) Multi-Factor Authentication To Non-Privileged Accounts"
   description = "Implement multi-factor authentication for access to non-privileged accounts."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -52,6 +54,7 @@ benchmark "nist_800_53_rev_5_ia_2_6" {
   description = "Implement multi-factor authentication for [Selection (one or more): local; network; remote] access to [Selection (one or more): privileged accounts; non-privileged accounts] such that: (a) One of the factors is provided by a device separate from the system gaining access; and (b) The device meets [Assignment: organization-defined strength of mechanism requirements]."
   children = [
     benchmark.nist_800_53_rev_5_ia_2_6_a,
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -64,6 +67,7 @@ benchmark "nist_800_53_rev_5_ia_2_6_a" {
   title       = "IA-2(6)(a)"
   description = "Implement multi-factor authentication for [Selection (one or more): local; network; remote] access to [Selection (one or more): privileged accounts; non-privileged accounts] such that: (a) One of the factors is provided by a device separate from the system gaining access."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
@@ -76,6 +80,7 @@ benchmark "nist_800_53_rev_5_ia_2_8" {
   title       = "IA-2(8) Access To Accounts — Replay Resistant"
   description = "Implement replay-resistant authentication mechanisms for access to [Selection (one or more): privileged accounts; non-privileged accounts]."
   children = [
+    control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled
   ]
 
