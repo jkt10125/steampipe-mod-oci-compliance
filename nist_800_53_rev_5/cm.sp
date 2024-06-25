@@ -35,7 +35,8 @@ benchmark "nist_800_53_rev_5_cm_5_1_a" {
   description = "Enforce access restrictions using [Assignment: organization-defined automated mechanisms]."
   children = [
     control.iam_user_console_access_mfa_enabled,
-    control.iam_user_mfa_enabled
+    control.iam_user_mfa_enabled,
+    control.iam_user_in_group
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -55,7 +56,8 @@ benchmark "nist_800_53_rev_5_cm_6_a" {
   title       = "CM-6(a)"
   description = "Establish and document configuration settings for components employed within the system that reflect the most restrictive mode consistent with operational requirements using [Assignment: organization-defined common secure configurations]."
   children = [
-    control.iam_user_console_access_mfa_enabled
+    control.iam_user_console_access_mfa_enabled,
+    control.iam_user_in_group
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -75,7 +77,8 @@ benchmark "nist_800_53_rev_5_cm_9_b" {
   title       = "CM-9(b)"
   description = "Develop, document, and implement a configuration management plan for the system that: b. Establishes a process for identifying configuration items throughout the system development life cycle and for managing the configuration of the configuration items."
   children = [
-    control.iam_user_console_access_mfa_enabled
+    control.iam_user_console_access_mfa_enabled,
+    control.iam_user_in_group
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
