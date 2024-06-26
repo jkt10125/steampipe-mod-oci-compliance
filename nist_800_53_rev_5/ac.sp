@@ -18,7 +18,9 @@ benchmark "nist_800_53_rev_5_ac_2" {
   description = "Manage system accounts, group memberships, privileges, workflow, notifications, deactivations, and authorizations."
   children = [
     benchmark.nist_800_53_rev_5_ac_2_1,
+    benchmark.nist_800_53_rev_5_ac_2_3,
     benchmark.nist_800_53_rev_5_ac_2_6,
+    benchmark.nist_800_53_rev_5_ac_2_d_1,
     benchmark.nist_800_53_rev_5_ac_2_i_2
   ]
 
@@ -31,10 +33,71 @@ benchmark "nist_800_53_rev_5_ac_2_1" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_in_group,
-    control.iam_user_mfa_enabled
+    control.iam_user_mfa_enabled,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
+}
+
+benchmark "nist_800_53_rev_5_ac_2_3" {
+  title       =  "AC-2(3) Disable Accounts"
+  description = "Disable accounts within [Assignment: organization-defined time period] when the accounts: (a) Have expired; (b) Are no longer associated with a user or individual; (c) Are in violation of organizational policy; or (d) Have been inactive for [Assignment: organization-defined time period]."
+  children = [
+    control.iam_account_password_policy_min_length_14,
+    benchmark.nist_800_53_rev_5_ac_2_3_a,
+    benchmark.nist_800_53_rev_5_ac_2_3_b,
+    benchmark.nist_800_53_rev_5_ac_2_3_c,
+    benchmark.nist_800_53_rev_5_ac_2_3_d
+  ]
+
+  tags = local.nist_800_53_rev_5_common_tags
+}
+
+benchmark "nist_800_53_rev_5_ac_2_3_a" {
+  title       = "AC-2(3)(a)"
+  description = "Disable accounts within [Assignment: organization-defined time period] when the accounts: (a) Have expired."
+  children = [
+    control.iam_account_password_policy_min_length_14
+  ]
+
+  tags = merge(local.nist_800_53_rev_5_common_tags, {
+    service = "AWS/IAM"
+  })
+}
+
+benchmark "nist_800_53_rev_5_ac_2_3_b" {
+  title       = "AC-2(3)(b)"
+  description = "Disable accounts within [Assignment: organization-defined time period] when the accounts: (b) Are no longer associated with a user or individual."
+  children = [
+    control.iam_account_password_policy_min_length_14
+  ]
+
+  tags = merge(local.nist_800_53_rev_5_common_tags, {
+    service = "AWS/IAM"
+  })
+}
+
+benchmark "nist_800_53_rev_5_ac_2_3_c" {
+  title       = "AC-2(3)(c)"
+  description = "Disable accounts within [Assignment: organization-defined time period] when the accounts: (c) Are in violation of organizational policy."
+  children = [
+    control.iam_account_password_policy_min_length_14
+  ]
+
+  tags = local.nist_800_53_rev_5_common_tags
+}
+
+benchmark "nist_800_53_rev_5_ac_2_3_d" {
+  title       = "AC-2(3)(d)"
+  description = "Disable accounts within [Assignment: organization-defined time period] when the accounts: (d) Have been inactive for [Assignment: organization-defined time period]."
+  children = [
+    control.iam_account_password_policy_min_length_14
+  ]
+
+  tags = merge(local.nist_800_53_rev_5_common_tags, {
+    service = "AWS/IAM"
+  })
 }
 
 benchmark "nist_800_53_rev_5_ac_2_6" {
@@ -45,6 +108,18 @@ benchmark "nist_800_53_rev_5_ac_2_6" {
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
+}
+
+benchmark "nist_800_53_rev_5_ac_2_d_1" {
+  title       = "AC-2(d)(1)"
+  description = "d. Specify: 1. Authorized users of the system;personnel termination and transfer processes."
+  children = [
+    control.iam_account_password_policy_min_length_14
+  ]
+
+  tags = merge(local.nist_800_53_rev_5_common_tags, {
+    service = "AWS/IAM"
+  })
 }
 
 benchmark "nist_800_53_rev_5_ac_2_i_2" {
@@ -103,7 +178,8 @@ benchmark "nist_800_53_rev_5_ac_3_3" {
     benchmark.nist_800_53_rev_5_ac_3_3_c,
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -115,7 +191,8 @@ benchmark "nist_800_53_rev_5_ac_3_3_a" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -127,7 +204,8 @@ benchmark "nist_800_53_rev_5_ac_3_3_b_1" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -139,7 +217,8 @@ benchmark "nist_800_53_rev_5_ac_3_3_b_2" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -151,7 +230,8 @@ benchmark "nist_800_53_rev_5_ac_3_3_b_3" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -163,7 +243,8 @@ benchmark "nist_800_53_rev_5_ac_3_3_b_4" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -175,7 +256,8 @@ benchmark "nist_800_53_rev_5_ac_3_3_b_5" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -187,7 +269,8 @@ benchmark "nist_800_53_rev_5_ac_3_3_c" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -204,7 +287,8 @@ benchmark "nist_800_53_rev_5_ac_3_4" {
     benchmark.nist_800_53_rev_5_ac_3_4_e,
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -216,7 +300,8 @@ benchmark "nist_800_53_rev_5_ac_3_4_a" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -228,7 +313,8 @@ benchmark "nist_800_53_rev_5_ac_3_4_b" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -240,7 +326,8 @@ benchmark "nist_800_53_rev_5_ac_3_4_c" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -252,7 +339,8 @@ benchmark "nist_800_53_rev_5_ac_3_4_d" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -264,7 +352,8 @@ benchmark "nist_800_53_rev_5_ac_3_4_e" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -286,7 +375,8 @@ benchmark "nist_800_53_rev_5_ac_3_8" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -308,7 +398,8 @@ benchmark "nist_800_53_rev_5_ac_3_12_a" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -320,7 +411,8 @@ benchmark "nist_800_53_rev_5_ac_3_13" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -343,7 +435,8 @@ benchmark "nist_800_53_rev_5_ac_3_15_a" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -355,7 +448,8 @@ benchmark "nist_800_53_rev_5_ac_3_15_b" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -377,7 +471,8 @@ benchmark "nist_800_53_rev_5_ac_4_28" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -424,7 +519,8 @@ benchmark "nist_800_53_rev_5_ac_7_4" {
   children = [
     benchmark.nist_800_53_rev_5_ac_7_4_a,
     control.iam_user_console_access_mfa_enabled,
-    control.iam_user_mfa_enabled
+    control.iam_user_mfa_enabled,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
@@ -437,7 +533,8 @@ benchmark "nist_800_53_rev_5_ac_7_4_a" {
   description = "Allow the use of [Assignment: organization-defined authentication factors] that are different from the primary authentication factors after the number of organization-defined consecutive invalid logon attempts have been exceeded."
   children = [
     control.iam_user_console_access_mfa_enabled,
-    control.iam_user_mfa_enabled
+    control.iam_user_mfa_enabled,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
@@ -451,7 +548,8 @@ benchmark "nist_800_53_rev_5_ac_24" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags

@@ -24,7 +24,8 @@ benchmark "nist_800_53_rev_5_sc_23_3" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags

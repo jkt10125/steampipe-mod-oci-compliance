@@ -4,7 +4,8 @@ benchmark "nist_800_53_rev_5_cm" {
   children = [
     benchmark.nist_800_53_rev_5_cm_5,
     benchmark.nist_800_53_rev_5_cm_6,
-    benchmark.nist_800_53_rev_5_cm_9
+    benchmark.nist_800_53_rev_5_cm_9,
+    benchmark.nist_800_53_rev_5_cm_12
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -36,7 +37,8 @@ benchmark "nist_800_53_rev_5_cm_5_1_a" {
   children = [
     control.iam_user_console_access_mfa_enabled,
     control.iam_user_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -57,7 +59,8 @@ benchmark "nist_800_53_rev_5_cm_6_a" {
   description = "Establish and document configuration settings for components employed within the system that reflect the most restrictive mode consistent with operational requirements using [Assignment: organization-defined common secure configurations]."
   children = [
     control.iam_user_console_access_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -78,7 +81,28 @@ benchmark "nist_800_53_rev_5_cm_9_b" {
   description = "Develop, document, and implement a configuration management plan for the system that: b. Establishes a process for identifying configuration items throughout the system development life cycle and for managing the configuration of the configuration items."
   children = [
     control.iam_user_console_access_mfa_enabled,
-    control.iam_user_in_group
+    control.iam_user_in_group,
+    control.iam_account_password_policy_min_length_14
+  ]
+
+  tags = local.nist_800_53_rev_5_common_tags
+}
+
+benchmark "nist_800_53_rev_5_cm_12" {
+  title       = "Information Location (CM-12)"
+  description = "a. Identify and document the location of [Assignment: organization-defined information] and the specific system components on which the information is processed and stored; b. Identify and document the users who have access to the system and system components where the information is processed and stored; and c. Document changes to the location (i.e., system or system components) where the information is processed and stored."
+  children = [
+    benchmark.nist_800_53_rev_5_cm_12_b
+  ]
+
+  tags = local.nist_800_53_rev_5_common_tags
+}
+
+benchmark "nist_800_53_rev_5_cm_12_b" {
+  title       = "CM-12(b)"
+  description = "Identify and document the users who have access to the system and system components where the information is processed and stored."
+  children = [
+    control.iam_account_password_policy_min_length_14
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
