@@ -23,9 +23,13 @@ benchmark "nist_800_53_rev_5_sc_23_3" {
   description = "Generate a unique session identifier for each session with [Assignment: organization-defined randomness requirements] and recognize only session identifiers that are system-generated."
   children = [
     control.iam_user_console_access_mfa_enabled,
+<<<<<<< HEAD
     control.iam_user_mfa_enabled,
     control.iam_user_in_group,
     control.iam_account_password_policy_min_length_14
+=======
+    control.iam_user_mfa_enabled
+>>>>>>> 9b9e2bc87cf8ffb62e6b4a91c156496409a0bd59
   ]
 
   tags = local.nist_800_53_rev_5_common_tags

@@ -4,6 +4,7 @@ locals {
   })
 }
 
+<<<<<<< HEAD
 control "iam_account_password_policy_min_length_14" {
   title       = "Ensure IAM password policy requires a minimum length of 14 or greater"
   description = "Password policies, in part, enforce password complexity requirements. Use IAM password policies to ensure that passwords are at least a given length. Security Hub recommends that the password policy require a minimum password length of 14 characters."
@@ -24,6 +25,8 @@ control "iam_user_in_group" {
   })
 }
 
+=======
+>>>>>>> 9b9e2bc87cf8ffb62e6b4a91c156496409a0bd59
 control "iam_user_console_access_mfa_enabled" {
   title       = "IAM users with console access should have MFA enabled"
   description = "Manage access to resources in the AWS Cloud by ensuring that MFA is enabled for all AWS Identity and Access Management (IAM) users that have a console password."
@@ -80,6 +83,7 @@ query "iam_user_console_access_mfa_enabled" {
     from
       oci_identity_user;
   EOQ
+<<<<<<< HEAD
 }
 
 query "iam_user_in_group" {
@@ -118,3 +122,6 @@ query "iam_account_password_policy_min_length_14" {
       oci_identity_authentication_policy;
   EOQ
 }
+=======
+}
+>>>>>>> 9b9e2bc87cf8ffb62e6b4a91c156496409a0bd59

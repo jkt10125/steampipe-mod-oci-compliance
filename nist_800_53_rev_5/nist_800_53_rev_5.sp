@@ -14,9 +14,13 @@ benchmark "nist_800_53_rev_5" {
     benchmark.nist_800_53_rev_5_ac,
     benchmark.nist_800_53_rev_5_cm,
     benchmark.nist_800_53_rev_5_ia,
+<<<<<<< HEAD
     benchmark.nist_800_53_rev_5_sc,
     benchmark.nist_800_53_rev_5_mp,
     benchmark.nist_800_53_rev_5_ma
+=======
+    benchmark.nist_800_53_rev_5_sc
+>>>>>>> 9b9e2bc87cf8ffb62e6b4a91c156496409a0bd59
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
