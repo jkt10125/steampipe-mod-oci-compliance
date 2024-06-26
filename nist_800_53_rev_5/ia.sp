@@ -2,14 +2,10 @@ benchmark "nist_800_53_rev_5_ia" {
   title       = "Identification and Authentication (IA)"
   description = "IA controls are specific to the identification and authentication policies in an organization. This includes the identification and authentication of organizational and non-organizational users and how the management of those systems."
   children = [
-<<<<<<< HEAD
     benchmark.nist_800_53_rev_5_ia_2,
     benchmark.nist_800_53_rev_5_ia_5,
     benchmark.nist_800_53_rev_5_ia_4,
     benchmark.nist_800_53_rev_5_ia_8
-=======
-    benchmark.nist_800_53_rev_5_ia_2
->>>>>>> 9b9e2bc87cf8ffb62e6b4a91c156496409a0bd59
   ]
 
   tags = local.nist_800_53_rev_5_common_tags
@@ -95,7 +91,6 @@ benchmark "nist_800_53_rev_5_ia_2_8" {
     service = "AWS/IAM"
   })
 }
-<<<<<<< HEAD
 
 benchmark "nist_800_53_rev_5_ia_4" {
   title       = "Identifier Management (IA-4)"
@@ -318,5 +313,3 @@ benchmark "nist_800_53_rev_5_ia_8_2_b" {
     service = "AWS/IAM"
   })
 }
-=======
->>>>>>> 9b9e2bc87cf8ffb62e6b4a91c156496409a0bd59
