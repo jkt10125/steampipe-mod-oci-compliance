@@ -15,3 +15,6 @@
 # Powerpipe variable files
 *.ppvars
 *.auto.ppvars
+
+output.txt
+oci_compliance.benchmark.cis_v200.20240628T115030.json

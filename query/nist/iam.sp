@@ -16,7 +16,7 @@ control "iam_account_password_policy_min_length_14" {
 
 control "iam_user_in_group" {
   title       = "IAM users should be in at least one group"
-  description = "AWS Identity and Access Management (IAM) can help you restrict access permissions and authorizations, by ensuring IAM users are members of at least one group."
+  description = "OCI Identity and Access Management (IAM) can help you restrict access permissions and authorizations, by ensuring IAM users are members of at least one group."
   query       = query.iam_user_in_group
 
   tags = merge(local.conformance_pack_iam_common_tags, {
@@ -26,7 +26,7 @@ control "iam_user_in_group" {
 
 control "iam_user_console_access_mfa_enabled" {
   title       = "IAM users with console access should have MFA enabled"
-  description = "Manage access to resources in the AWS Cloud by ensuring that MFA is enabled for all AWS Identity and Access Management (IAM) users that have a console password."
+  description = "Manage access to resources in the OCI Cloud by ensuring that MFA is enabled for all OCI Identity and Access Management (IAM) users that have a console password."
   query       = query.iam_user_console_access_mfa_enabled
 
   tags = merge(local.conformance_pack_iam_common_tags, {
@@ -36,7 +36,7 @@ control "iam_user_console_access_mfa_enabled" {
 
 control "iam_user_mfa_enabled" {
   title       = "IAM user MFA should be enabled"
-  description = "Enable this rule to restrict access to resources in the AWS Cloud."
+  description = "Enable this rule to restrict access to resources in the OCI Cloud."
   query       = query.iam_user_mfa_enabled
 
   tags = merge(local.conformance_pack_iam_common_tags, {

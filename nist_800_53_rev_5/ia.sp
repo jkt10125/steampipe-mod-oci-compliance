@@ -22,7 +22,7 @@ benchmark "nist_800_53_rev_5_ia_2" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -35,7 +35,7 @@ benchmark "nist_800_53_rev_5_ia_2_1" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -48,7 +48,7 @@ benchmark "nist_800_53_rev_5_ia_2_2" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -62,7 +62,7 @@ benchmark "nist_800_53_rev_5_ia_2_6" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -75,7 +75,7 @@ benchmark "nist_800_53_rev_5_ia_2_6_a" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -88,7 +88,7 @@ benchmark "nist_800_53_rev_5_ia_2_8" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -100,7 +100,7 @@ benchmark "nist_800_53_rev_5_ia_4" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -112,7 +112,7 @@ benchmark "nist_800_53_rev_5_ia_4_d" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -141,7 +141,7 @@ benchmark "nist_800_53_rev_5_ia_5_b" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -153,7 +153,7 @@ benchmark "nist_800_53_rev_5_ia_5_c" {
   ]
 
     tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -165,7 +165,7 @@ benchmark "nist_800_53_rev_5_ia_5_d" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -177,7 +177,7 @@ benchmark "nist_800_53_rev_5_ia_5_f" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -189,7 +189,7 @@ benchmark "nist_800_53_rev_5_ia_5_h" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -213,7 +213,7 @@ benchmark "nist_800_53_rev_5_ia_5_1_f" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -225,7 +225,7 @@ benchmark "nist_800_53_rev_5_ia_5_1_g" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -237,7 +237,7 @@ benchmark "nist_800_53_rev_5_ia_5_1_h" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -250,7 +250,7 @@ benchmark "nist_800_53_rev_5_ia_5_18" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -262,7 +262,7 @@ benchmark "nist_800_53_rev_5_ia_5_18_a" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -274,7 +274,7 @@ benchmark "nist_800_53_rev_5_ia_5_18_b" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -286,7 +286,7 @@ benchmark "nist_800_53_rev_5_ia_8" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -298,7 +298,7 @@ benchmark "nist_800_53_rev_5_ia_8_2" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
 
@@ -310,6 +310,6 @@ benchmark "nist_800_53_rev_5_ia_8_2_b" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }

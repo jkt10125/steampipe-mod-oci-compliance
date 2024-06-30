@@ -26,6 +26,6 @@ benchmark "nist_800_53_rev_5_ma_4_c" {
   ]
 
   tags = merge(local.nist_800_53_rev_5_common_tags, {
-    service = "AWS/IAM"
+    service = "OCI/IAM"
   })
 }
